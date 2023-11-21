@@ -1,8 +1,8 @@
-const email1 = document.getElementById("email");
+const emailid = document.getElementById("email");
 email.addEventListener('input', () => validate(email));
 
-const submit1 = document.getElementById('submit');
-submit1.addEventListener('click', () => validate(email1));
+const submitted = document.getElementById('submit');
+submitted.addEventListener('click', () => validate(emailid));
 
 function validate(element){
   if(element.validity.typeMismatch){
@@ -52,7 +52,7 @@ const displayEntries = () => {
       const emailCell = `<td class='border px-4 py-2'>${entry.email}</td>`;
       const passwordCell = `<td class='border px-4 py-2'>${entry.password}</td>`;
       const dobCell = `<td class='border px-4 py-2'>${entry.dob}</td>`;
-      const acceptTermsCell = `<td class='border px-4 py-2'>${entry.acceptedTermsAndconditions}</td>`;
+      const acceptTermsCell = `<td class='border px-4 py-2'>${entry.termsandconditions}</td>`;
 
       const row = `<tr> ${nameCell} ${emailCell} ${passwordCell} ${dobCell} ${acceptTermsCell}</tr>`;
       return row;
@@ -76,7 +76,7 @@ const saveUserForm = (event) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const dob = document.getElementById("dob").value;
-  const acceptedTermsAndconditions = document.getElementById("acceptTerms").checked;
+  const termsandconditions = document.getElementById("acceptTerms").checked;
   const age = AgeCalculate(dob);
 
   if( age < 18 || age > 55) {
@@ -88,7 +88,7 @@ const saveUserForm = (event) => {
     email,
     password,
     dob,
-    acceptedTermsAndconditions
+    termsandconditions
   };
 
 
